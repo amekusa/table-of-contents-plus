@@ -1741,7 +1741,9 @@ if ( !class_exists( 'toc_widget' ) ) :
 					$css_classes .= ' have_bullets';
 				else
 					$css_classes .= ' no_bullets';
-				
+
+				if ( has_filter( 'toc_classes' ) ) $css_classes = apply_filters( 'toc_classes', $css_classes );
+
 				if ( $items ) {
 					// before widget (defined by themes)
 					echo $before_widget;
